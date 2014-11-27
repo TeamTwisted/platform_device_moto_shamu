@@ -178,6 +178,9 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
+
 -include vendor/moto/shamu/BoardConfigVendor.mk
 
 #Options for Optimizations (Some only work with Sabermod Toolchains)

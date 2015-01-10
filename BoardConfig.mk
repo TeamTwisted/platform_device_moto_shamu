@@ -152,3 +152,5 @@ export GRAPHITE_OPTS := true
 export USE_O3_OPTIMIZATIONS := true
 export ENABLE_GCCONLY := true
 export KRAIT_TUNINGS := true
+
+DEVICE_PACKAGE_OVERLAYS += device/moto/shamu/overlay-cm

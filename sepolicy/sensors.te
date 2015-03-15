@@ -19,7 +19,7 @@ allow sensors sensors_device:chr_file rw_file_perms;
 type_transition sensors socket_device:sock_file sensors_socket "sensor_ctl_socket";
 allow sensors sensors_socket:sock_file create_file_perms;
 allow sensors socket_device:dir { add_name write remove_name };
-
+allow sensors self:capability net_raw;
 # Wake lock access
 wakelock_use(sensors)
 

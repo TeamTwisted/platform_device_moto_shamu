@@ -25,7 +25,7 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_KERNEL_CONFIG := shamu_defconfig
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
-TARGET_GCC_VERSION_ARM := 4.9
+TARGET_GCC_VERSION_ARM := 5.1
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 BOARD_KERNEL_BASE := 0x00000000
@@ -180,3 +180,19 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
 EXTENDED_FONT_FOOTPRINT := true
 
 -include vendor/moto/shamu/BoardConfigVendor.mk
+
+#Options for Optimizations (Some only work with Sabermod Toolchains)
+
+USE_HOST_4_8=true
+GRAPHITE_OPTS=true
+STRICT_ALIASING=true
+USE_O3_OPTIMIZATIONS=true
+KRAIT_TUNINGS=true
+ENABLE_GCCONLY=true
+TARGET_USE_PIPE=true
+FLOOP_NEST_OPTIMIZE=true
+FFAST_MATH=true
+ENABLE_GOMP=false
+ENABLE_SANITIZE=false
+ENABLE_ARM_MODE=false
+ENABLE_PTHREAD=false

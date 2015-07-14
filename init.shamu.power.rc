@@ -48,7 +48,7 @@ on property:dev.bootcomplete=1
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor conservative
 
     # cpufreq settings
-    write /sys/module/msm_thermal/parameters/temp_threshold 70
+    write /sys/module/msm_thermal/core_control/enabled 1
     write /sys/class/misc/mako_hotplug_control/load_threshold 0
     write /sys/class/misc/mako_hotplug_control/high_load_counter 5
     write /dev/cpuctl/apps/cpu.notify_on_migrate 0

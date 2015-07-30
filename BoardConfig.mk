@@ -184,7 +184,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 -include vendor/moto/shamu/BoardConfigVendor.mk
 
 #Options for Optimizations (Some only work with Sabermod Toolchains)
-
+export IS_RELEASED_BUILD := true
 export USE_HOST_4_8 := true
 export GRAPHITE_OPTS := true
 export STRICT_ALIASING := true

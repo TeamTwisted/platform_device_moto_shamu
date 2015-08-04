@@ -22,7 +22,7 @@ TARGET_CPU_VARIANT := krait
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_KERNEL_CONFIG := shamu_defconfig
+TARGET_KERNEL_CONFIG := lk_defconfig
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
 TARGET_GCC_VERSION_ARM := 4.9
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb

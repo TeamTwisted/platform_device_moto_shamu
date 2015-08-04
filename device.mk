@@ -154,26 +154,27 @@ PRODUCT_PACKAGES += \
     libaudio-resampler
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.monitorRotation=true 
-
-# Missing Props
-PRODUCT_PROPERTY_OVERRIDES += \
-    fmas.spkr_6ch=35,20,110 \
-    fmas.spkr_2ch=35,25 \
-    fmas.spkr_angles=10 \
-    fmas.spkr_sgain=0 \
     media.aac_51_output_enabled=true \
-    drm.service.enabled=true \
     persist.audio.dualmic.config=endfire \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=false 
+    persist.audio.fluence.speaker=false \
+    ro.audio.monitorRotation=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=1
 
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    fmas.spkr_6ch=35,20,110 \
+    fmas.spkr_2ch=35,25 \
+    fmas.spkr_angles=10 \
+    fmas.spkr_sgain=0 \
 
 PRODUCT_PACKAGES += \
     libqomx_core \
@@ -198,8 +199,8 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # for launcher layout
-PRODUCT_PACKAGES += \
-    ShamuLayout
+#PRODUCT_PACKAGES += \
+#    ShamuLayout
 
 PRODUCT_PACKAGES += \
     bdAddrLoader
@@ -224,7 +225,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.no_wait_for_card=1
+    persist.radio.no_wait_for_card=1 \
+    persist.radio.sib16_support=1
+
+# never dexopt the MotoSignature
+$(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
+
+# WiFi calling
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.iwlan.enable=true \
+    persist.radio.ignore_ims_wlan=1 \
+    persist.radio.data_con_rprt=1
 
 # Rich Communications Service is disabled in 5.1
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -300,6 +311,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     device/moto/shamu/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/moto/shamu/nfc/libnfc-brcm-20795a10.conf:system/etc/libnfc-brcm-20795a10.conf
+
+# NFCEE access control
+PRODUCT_COPY_FILES += \
+    device/moto/shamu/nfcee_access.xml:system/etc/nfcee_access.xml
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp

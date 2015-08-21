@@ -185,17 +185,16 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 #Options for Optimizations (Some only work with Sabermod Toolchains)
 export IS_RELEASED_BUILD := true
-export ART_USE_OPTIMIZING_COMPILER := true
 export USE_HOST_4_8 := true
-export ENABLE_ARM_MODE := true
-export USE_O3_OPTIMIZATIONS := true
-export TARGET_USE_PIPE := true
-export STRICT_ALIASING := true
-export KRAIT_TUNINGS := true
-export ENABLE_PTHREAD := true
-export ENABLE_SANITIZE := true
-export ENABLE_GOMP := true
-export ENABLE_GCCONLY := true
 export GRAPHITE_OPTS := true
-export FFAST_MATH := true
+export STRICT_ALIASING := true
+export USE_O3_OPTIMIZATIONS := true
+export KRAIT_TUNINGS := true
+export ENABLE_GCCONLY := true
+export TARGET_USE_PIPE := true
 export FLOOP_NEST_OPTIMIZE := true
+export FFAST_MATH := true
+export ENABLE_GOMP := false
+export ENABLE_SANITIZE := false
+export ENABLE_ARM_MODE := false
+export ENABLE_PTHREAD := false

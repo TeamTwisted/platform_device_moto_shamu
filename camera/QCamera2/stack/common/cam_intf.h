@@ -667,7 +667,7 @@ extern "C" {
 #endif
 
 void *get_pointer_of(cam_intf_parm_type_t meta_id,
-        const metadata_buffer_t* metadata);
+        metadata_buffer_t* metadata);
 
 uint32_t get_size_of(cam_intf_parm_type_t param_id);
 

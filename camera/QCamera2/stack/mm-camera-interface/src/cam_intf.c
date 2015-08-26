@@ -30,7 +30,7 @@
 #include "cam_intf.h"
 
 void *get_pointer_of(cam_intf_parm_type_t meta_id,
-        const metadata_buffer_t* metadata)
+        metadata_buffer_t* metadata)
 {
     switch(meta_id) {
         case CAM_INTF_META_HISTOGRAM:

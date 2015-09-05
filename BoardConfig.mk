@@ -23,7 +23,7 @@ TARGET_CPU_VARIANT := krait
 TARGET_NO_BOOTLOADER := true
 
 TARGET_KERNEL_CONFIG := shamu_defconfig
-TARGET_KERNEL_SOURCE := kernel/moto/shamu
+TARGET_KERNEL_SOURCE := kernel/moto/slim
 TARGET_GCC_VERSION_ARM := 5.2
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
@@ -180,6 +180,9 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Enable workaround for slow rom flash
 BOARD_SUPPRESS_SECURE_ERASE := true
+
+# CMHW
+BOARD_HARDWARE_CLASS := device/motorola/shamu/cmhw
 
 -include vendor/moto/shamu/BoardConfigVendor.mk
 

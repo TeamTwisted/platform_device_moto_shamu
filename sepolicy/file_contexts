@@ -157,3 +157,7 @@
 
 /dev/socket/cnd  u:object_r:cnd_socket:s0
 /system/bin/cnd  u:object_r:cnd_exec:s0
+
+# TapToWake
+/sys/bus/i2c/devices/1-004a/dt2w                u:object_r:tap2wake_dev:s0
+

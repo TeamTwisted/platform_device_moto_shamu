@@ -1,4 +1,6 @@
 on charger
+    #disable zen decision
+    write /sys/kernel/zen_decision/enabled 0
     #low power governing
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
     write /sys/devices/system/cpu/cpu1/online 0
@@ -55,10 +57,5 @@ on property:dev.bootcomplete=1
     write /sys/module/msm_pm/modes/cpu3/retention/idle_enabled 1
 
     # cpufreq settings
-    write /sys/devices/system/cpu/cpufreq/conservative/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/conservative/freq_step 10
-    write /sys/devices/system/cpu/cpufreq/conservative/down_threshold 40
-    write /sys/devices/system/cpu/cpufreq/conservative/input_boost_freq 2649600
-    write /sys/class/misc/mako_hotplug_control/load_threshold 0
-    write /sys/class/misc/mako_hotplug_control/high_load_counter 5
     write /dev/cpuctl/apps/cpu.notify_on_migrate 0
+

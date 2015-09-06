@@ -157,3 +157,7 @@
 
 /dev/socket/cnd  u:object_r:cnd_socket:s0
 /system/bin/cnd  u:object_r:cnd_exec:s0
+
+# Vibrator Intensity
+/sys/vibrator/pwmvalue                                   u:object_r:sysfs:s0
+

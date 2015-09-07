@@ -22,8 +22,8 @@ TARGET_CPU_VARIANT := krait
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_KERNEL_CONFIG := shamu_defconfig
-TARGET_KERNEL_SOURCE := kernel/moto/shamu
+TARGET_KERNEL_CONFIG := hells_defconfig
+TARGET_KERNEL_SOURCE := kernel/moto/hells-Core-N6
 TARGET_GCC_VERSION_ARM := 5.2
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
@@ -183,19 +183,23 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 -include vendor/moto/shamu/BoardConfigVendor.mk
 
+# CMHW
+BOARD_HARDWARE_CLASS := device/motorola/shamu/cmhw
+
 #Options for Optimizations (Some only work with Sabermod Toolchains)
 export USE_GCC_DEFAULTS := false
-export IS_RELEASED_BUILD := true
+export IS_RELEASED_BUILD := false
+export ART_USE_OPTIMIZING_COMPILER := true
 export USE_HOST_4_8 := true
-export GRAPHITE_OPTS := true
-export STRICT_ALIASING := true
-export USE_O3_OPTIMIZATIONS := true
-export KRAIT_TUNINGS := true
-export ENABLE_GCCONLY := true
-export TARGET_USE_PIPE := true
-export FLOOP_NEST_OPTIMIZE := false
-export FFAST_MATH := false
-export ENABLE_GOMP := true
-export ENABLE_SANITIZE := true
 export ENABLE_ARM_MODE := true
+export USE_O3_OPTIMIZATIONS := true
+export TARGET_USE_PIPE := true
+export STRICT_ALIASING := true
+export KRAIT_TUNINGS := true
 export ENABLE_PTHREAD := true
+export ENABLE_SANITIZE := true
+export ENABLE_GOMP := true
+export ENABLE_GCCONLY := true
+export GRAPHITE_OPTS := true
+export FFAST_MATH := false
+export FLOOP_NEST_OPTIMIZE := false

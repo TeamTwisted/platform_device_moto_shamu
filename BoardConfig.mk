@@ -184,7 +184,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 -include vendor/moto/shamu/BoardConfigVendor.mk
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/motorola/shamu/cmhw
+BOARD_HARDWARE_CLASS := device/moto/shamu/cmhw
 
 #Options for Optimizations (Some only work with Sabermod Toolchains)
 export USE_GCC_DEFAULTS := false

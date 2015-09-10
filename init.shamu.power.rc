@@ -18,6 +18,7 @@ on boot
     chown system system /dev/cpuctl/apps/cpu.notify_on_migrate
     chmod 0660 /dev/cpuctl/apps/cpu.notify_on_migrate
     write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/qcom,bcl.39/mode disabled
 
 on property:dev.bootcomplete=1
     stop mpdecision

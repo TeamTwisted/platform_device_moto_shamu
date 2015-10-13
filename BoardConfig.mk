@@ -22,6 +22,11 @@ TARGET_CPU_VARIANT := krait
 
 TARGET_NO_BOOTLOADER := true
 
+TARGET_KERNEL_CONFIG := hells_defconfig
+TARGET_KERNEL_SOURCE := kernel/moto/hells-Core-N6
+TARGET_GCC_VERSION_ARM := 5.2
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -136,3 +141,13 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 -include vendor/moto/shamu/BoardConfigVendor.mk
+
+#Options for Optimizations (Some only work with Sabermod Toolchains)
+export TARGET_USE_PIPE := true
+export STRICT_ALIASING := true
+export GRAPHITE_OPTS := true
+export USE_O3_OPTIMIZATIONS := true
+export ENABLE_GCCONLY := true
+export FFAST_MATH := true
+export FLOOP_NEST_OPTIMIZE := true
+export KRAIT_TUNINGS := true

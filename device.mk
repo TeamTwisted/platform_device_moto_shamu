@@ -128,10 +128,6 @@ PRODUCT_PACKAGES += atmel.fw.apq8084
 PRODUCT_PACKAGES += \
     qmi_motext_hook
 
-# RIL
-PRODUCT_PACKAGES += \
-    libxml2
-
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
@@ -424,3 +420,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Low latency audio buffer size in frames
 PRODUCT_PROPERTY_OVERRIDES += \
     audio_hal.period_size=192
+

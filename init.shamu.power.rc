@@ -15,8 +15,8 @@ on charger
 
 on boot
     # Shamu boots with performance governor.
-    chown system system /dev/cpuctl/apps/cpu.notify_on_migrate
-    chmod 0660 /dev/cpuctl/apps/cpu.notify_on_migrate
+    chown system system /dev/cpuctl/cpu.notify_on_migrate
+    chmod 0660 /dev/cpuctl/cpu.notify_on_migrate
     write /sys/module/msm_thermal/core_control/enabled 0
 
 on property:dev.bootcomplete=1
@@ -57,4 +57,4 @@ on property:dev.bootcomplete=1
     write /sys/module/msm_pm/modes/cpu3/retention/idle_enabled 1
 
     # cpufreq settings
-    write /dev/cpuctl/apps/cpu.notify_on_migrate 0
+    write /dev/cpuctl/cpu.notify_on_migrate 0

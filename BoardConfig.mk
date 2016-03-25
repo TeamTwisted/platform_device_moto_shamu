@@ -146,10 +146,3 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 -include vendor/moto/shamu/BoardConfigVendor.mk
 
-#Options for Optimizations (Some only work with Sabermod Toolchains)
-export CLANG_O3 := true
-export STRICT_ALIASING := true
-export GRAPHITE_OPTS := true
-export USE_O3_OPTIMIZATIONS := true
-export ENABLE_GCCONLY := true
-export KRAIT_TUNINGS := true
